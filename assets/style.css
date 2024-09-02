@@ -1,0 +1,12 @@
+#map { width: 600px;
+    height: 400px;
+    position: relative;
+    right: -40%;
+    top: -80%
+
+ }
+
+#BG {
+    background-color: blueviolet;
+    height: 100%;
+}
