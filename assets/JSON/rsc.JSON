@@ -1,0 +1,179 @@
+[
+    {
+      "photo" : { "image": [ 'assets/img/pont.png'] },
+      "position" : {
+          "lat": 46.205548202278905,
+          "lng" : 6.149071455001832
+      },
+      "description" : "Pont du Mont-Blanc - Genève"
+  },
+   {
+      "photo" : { "image": ['assets/img/montcuq.jpg'] },
+      "position" : {
+          "lat" :  44.337147,
+          "lng" :  1.197360
+      },
+      "description" : ":)"
+  },
+  {
+      "photo" : {"image" : ['assets/img/espingo.jpg']},
+      "position" : {
+          "lat" : 42.730492,
+          "lng" : 0.499556
+      },
+      "description" : "Refuge d'Espingo - Pyréenées centrales - Bagnères de Luchon"
+  },
+  {
+      "photo" : {"image" : ['assets/img/richard.jpg']},
+      "position" : {
+          "lat" : 51.499209,
+          "lng" : -0.125854
+  },
+  "description" : "Statue de Richard Coeur de Lion - Parlement de Londres"
+},
+{
+ "photo" : {"image" : ['assets/img/nemo.jpeg']},
+      "position" : {
+          "lat" : -46.800059,
+          "lng" : -122.810501,
+},
+"description" : "Point Nemo - Point le plus éloigné de toute terre."
+},
+{
+  "photo" : {"image" : ['assets/img/detaille.jpg']},
+       "position" : {
+           "lat" : -66.866026,
+           "lng" : -66.810259 
+}, 
+"description" : "Ile Detaille - Fjord de Lallemand - Antarctique."
+},
+{
+  "photo" : {"image" : ['assets/img/tour.jpg']},
+       "position" : {
+           "lat" : 40.626569,
+           "lng" : 22.948514 
+},
+"description" : "Tour Blanche - Thessalonique"
+},
+{
+  "photo" : {"image" : ['assets/img/turquie.jpg']},
+       "position" : {
+           "lat" : 38.756986,
+           "lng" : 30.534422 
+},
+"description" : "Afyonkarahisar - Turquie"
+},
+{
+  "photo" : {"image" : ['assets/img/afpa.png']},
+       "position" : {
+           "lat" : 46.813269,
+           "lng" : 0.532261 
+},
+"description" : "Centre AFPA - Châtellerault"
+},
+{
+  "photo" : {"image" : ['assets/img/palais-ducs.jpg']},
+       "position" : {
+           "lat" : 46.583002,
+           "lng" : 0.342054 
+},
+"description" : "Palais des Ducs d'Aquitaine - Poitiers"
+},
+{
+  "photo" : {"image" : ['assets/img/alexandre.JPG']},
+       "position" : {
+           "lat" : 42.696195,
+           "lng" : 23.332282 
+},
+"description" : "Cathédrale Alexandre Nievski - Sofia"
+},
+{
+  "photo" : {"image" : ['assets/img/plaza.jpg']},
+       "position" : {
+           "lat" : 37.377828,
+           "lng" : -5.987131 
+},
+"description" : "Plaza de Espana - Séville"
+},
+{
+  "photo" : {"image" : ['assets/img/medersa.jpg']},
+       "position" : {
+           "lat" : 34.065116,
+           "lng" : -4.973616 
+},
+"description" : "Merdersa Attarine - Fès"
+},
+{
+  "photo" : {"image" : ['assets/img/phare.jpg']},
+       "position" : {
+           "lat" : -54.732467,
+           "lng" : -63.857228
+},
+"description" : "Phare du bout du monde - Terres de feu - Argentine"
+},
+{
+  "photo" : {"image" : ['assets/img/gengis.jpg']},
+       "position" : {
+           "lat" : 47.808582,
+           "lng" : 107.530650
+},
+"description" : "Statue équestre de Gengis Khan - Oulan-Bator"
+},
+{
+  "photo" : {"image" : ['assets/img/palais_ideal.jpg']},
+       "position" : {
+           "lat" : 45.256126,
+           "lng" : 5.028510
+},
+"description" : "Palais idéal du facteur Cheval - Hauterives"
+},
+{
+  "photo" : {"image" : ['assets/img/parc_gaudi.jpeg']},
+       "position" : {
+           "lat" : 41.414355,
+           "lng" : 2.152097 
+},
+"description" : "Parc Gaudi (Güell) - Barcelone"
+},
+{
+  "photo" : {"image" : ['assets/img/popeye.jpg']},
+       "position" : {
+           "lat" : 35.960940,
+           "lng" : 14.341222 
+},
+"description" : "Popeye village - Décor de film intact - Malte"
+},
+{
+  "photo" : {"image" : ['assets/img/enfer.jpg']},
+       "position" : {
+           "lat" : 40.252160,
+           "lng" : 58.438839
+},
+"description" : "Les portes de l'Enfer - Turkménistan"
+},
+{
+  "photo" : {"image" : ['assets/img/phraya.jpg']},
+       "position" : {
+           "lat" : 12.1965, 
+           "lng" : 100.0120 
+},
+"description" : "Grotte de Phraya Nakhon - Thaïlande"
+},
+{
+  "photo" : {"image" : ['assets/img/devil.jpg']},
+       "position" : {
+           "lat" : 51.536316, 
+           "lng" : 14.640907
+},
+"description" : "Le pont du Diable - Allemangne"
+},
+{
+  "photo" : {"image" : ['assets/img/tianzin.jpg']},
+       "position" : {
+           "lat" : 24.510842, 
+           "lng" : 111.207282 
+},
+"description" : "Montagnes de Tianzi - Chine"
+}
+ 
+]

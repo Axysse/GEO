@@ -1,13 +1,17 @@
-var map = L.map('map').setView([48.854622, 2.346616], 5);
+var map = L.map('map').setView([48.854622, 2.346616], 3);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+var poopIcon = L.icon({
+    iconUrl: 'assets/img/glace-removebg.png',
+    iconSize:     [48, 55], 
+    iconAnchor:   [26, 50], 
+})
 
-// let image0 = src = 'assets/img/pont.png'
-// let image1 = src = 'assets/img/montcuq.jpg'
+let score = null
 
 
 let game = [
@@ -131,20 +135,139 @@ let game = [
  },
  "description" : "Statue équestre de Gengis Khan - Oulan-Bator",
  },
+ {
+    "photo" : {"image" : ['assets/img/palais_ideal.jpg']},
+         "position" : {
+             "lat" : 45.256126,
+             "lng" : 5.028510, 
+ },
+ "description" : "Palais idéal du facteur Cheval - Hauterives",
+ },
+ {
+    "photo" : {"image" : ['assets/img/parc_gaudi.jpeg']},
+         "position" : {
+             "lat" : 41.414355,
+             "lng" : 2.152097, 
+ },
+ "description" : "Parc Gaudi (Güell) - Barcelone",
+ },
+ {
+    "photo" : {"image" : ['assets/img/popeye.jpg']},
+         "position" : {
+             "lat" : 35.960940,
+             "lng" : 14.341222, 
+ },
+ "description" : "Popeye village - Décor de film intact - Malte",
+ },
+ {
+    "photo" : {"image" : ['assets/img/enfer.jpg']},
+         "position" : {
+             "lat" : 40.252160,
+             "lng" : 58.438839, 
+ },
+ "description" : "Les portes de l'Enfer - Turkménistan",
+ },
+ {
+    "photo" : {"image" : ['assets/img/phraya.jpg']},
+         "position" : {
+             "lat" : 12.1965, 
+             "lng" : 100.0120, 
+ },
+ "description" : "Grotte de Phraya Nakhon - Thaïlande",
+ },
+ {
+    "photo" : {"image" : ['assets/img/devil.jpg']},
+         "position" : {
+             "lat" : 51.536316, 
+             "lng" : 14.640907, 
+ },
+ "description" : "Le pont du Diable - Allemangne",
+ },
+ {
+    "photo" : {"image" : ['assets/img/tianzin.jpg']},
+         "position" : {
+             "lat" : 24.510842, 
+             "lng" : 111.207282, 
+ },
+ "description" : "Montagnes de Tianzi - Chine",
+ },
+ {
+    "photo" : {"image" : ['assets/img/djenee.jpg']},
+         "position" : {
+             "lat" : 13.905135, 
+             "lng" : -4.555392, 
+ },
+ "description" : "Grande mosquée de Djénée - Mali",
+ },
+ {
+    "photo" : {"image" : ['assets/img/picassiette.jpg']},
+         "position" : {
+             "lat" : 48.442051, 
+             "lng" : 1.506043, 
+ },
+ "description" : "Maison Picassiette - Chartres - France",
+ },
+ {
+    "photo" : {"image" : ['assets/img/mano.jpg']},
+         "position" : {
+             "lat" : -24.158377, 
+             "lng" : -70.156401, 
+ },
+ "description" : "La mano del desierto - Chili",
+ },
+ {
+    "photo" : {"image" : ['assets/img/petra.jpg']},
+         "position" : {
+             "lat" : 30.328501, 
+             "lng" : 35.444358, 
+ },
+ "description" : "Cité de Petra - Jordanie",
+ },
+ {
+    "photo" : {"image" : ['assets/img/krak.jpg']},
+         "position" : {
+             "lat" : 34.787219, 
+             "lng" : 36.272174, 
+ },
+ "description" : "Krak des chevaliers - Syrie",
+ },
+ {
+    "photo" : {"image" : ['assets/img/delphes.jpg']},
+         "position" : {
+             "lat" : 38.482499, 
+             "lng" : 22.501190, 
+ },
+ "description" : "Temple d'Apollon - Delphes - Grèce",
+ },
+ {
+    "photo" : {"image" : ['assets/img/jigokudani.jpg']},
+         "position" : {
+             "lat" : 36.732675, 
+             "lng" : 138.462078, 
+ },
+ "description" : "Parc des singes des neiges - Jigokudani - Japon",
+ },
+ {
+    "photo" : {"image" : ['assets/img/gand.jpg']},
+         "position" : {
+             "lat" : 51.053891, 
+             "lng" : 3.720593, 
+ },
+ "description" : "Pont Sint-Michielsbrug - Gand - Belgique",
+ },
    
 ];
 
-let GAME = JSON.stringify(game)
- console.log(JSON.stringify(GAME))
 
 function getRandomItem(arr) {
 
     return randomIndex = Math.floor(Math.random() * game.length);
     
 }
+
 let result = getRandomItem(game);
 
-console.log(randomIndex);
+console.log(result);
 
 
 let display = document.getElementById('Img');
@@ -153,7 +276,6 @@ let imgDisp = document.createElement("img");
 imgDisp.src = game[result]['photo']["image"];
 imgDisp.style.height = "38rem";
 imgDisp.style.width = "70rem";
-display.appendChild(imgDisp);
 
 var popup = L.popup();
 
@@ -177,67 +299,85 @@ let refresh = document.getElementById("refresh");
 let text3 = document.getElementById("text3");
 let text4 = document.getElementById("text4");
 let text5 = document.getElementById("text5");
-let SCORE = document.getElementById("score")
-
+let SCORE = document.getElementById("score");
+let start = document.getElementById("start");
+let logo = document.getElementById("logo");
+let next = document.getElementById("next");
 
 truth = game[result]['position']
 
 
-guess.addEventListener('click', () => {
+start.addEventListener('click', () => {
+
+   let i = 0;
+
+    logo.classList.add("hidden");
+    display.appendChild(imgDisp);
+    guess.classList.remove("hidden");
+    start.classList.add("hidden");
+    
+
+    
+
+    guess.addEventListener('click', () => {
+
+        i++
+        console.log(i)
+
+    
+    
     guess.classList.add("hidden");
-    refresh.innerText = "REJOUER"
+
     gues = marker.getLatLng();
     text.innerText = gues;
+
     truth = game[result]['position'];
     desc = game[result]['description'];
     
-    let lat1 = gues["lat"]
-    let lng1 = gues["lng"]
-    let lat2 = game[result]['position']['lat']
-    let lng2 = game[result]['position']['lng']
+    let lat1 = gues["lat"];
+    let lng1 = gues["lng"];
+    let lat2 = game[result]['position']['lat'];
+    let lng2 = game[result]['position']['lng'];
 
-    let LATLNG1 = []
-    let LATLNG2 = []
+    let LATLNG1 = [];
+    let LATLNG2 = [];
 
-    LATLNG1.push(lat1)
-    LATLNG1.push(lng1)
-    LATLNG2.push(lat2)
-    LATLNG2.push(lng2)
+    LATLNG1.push(lat1);
+    LATLNG1.push(lng1);
+    LATLNG2.push(lat2);
+    LATLNG2.push(lng2);
 
-    let loin = map.distance(LATLNG1, LATLNG2) 
+    let loin = map.distance(LATLNG1, LATLNG2); 
 
-    let resultat = loin.toString().slice(0, 8)
+    let resultat = loin.toString().slice(0, 8);
 
-    L.marker(truth).addTo(map)
+    L.marker(truth, {icon: poopIcon}).addTo(map);
 
     mark = [LATLNG1, LATLNG2];
-    L.polyline(mark, {color: 'red'}).addTo(map)
-    console.log(resultat)
+    L.polyline(mark, {color: 'red'}).addTo(map);
 
     text5.innerText = desc
 
-    let score = null
-
-    if(loin <= 50000 ) {
+    if(loin <= 100000 ) {
         text2.innerText = 'GG MA GUEULE'
         text4.innerText = 'Tu es à ' + resultat + ' métres de ta destination!'
         switch (true) {
-            case (loin <= 1000):
-                text3.innerText = "T'est un ouf toi, un malade!."
+            case (loin <= 2500):
+                text3.innerText = "T'est un ouf toi, un malade!"
                 score = score + 5000
                 SCORE.innerText = 'POINTS : ' + score + ' points'
                 break;
-            case (loin > 1000 && loin <= 5000):
+            case (loin > 2500 && loin <= 7500):
                 text3.innerText = "Propre de fou."
                 score = score + 3500
                 SCORE.innerText = 'POINTS : ' + score + ' points'
                 break;
-            case (loin > 5000 && loin <= 20000):
+            case (loin > 7500 && loin <= 50000):
                 text3.innerText = "C'est OKAY!"
                 score = score + 1750
                 SCORE.innerText = 'POINTS : ' + score + ' points'
                 break;
-                case (loin > 20000 && loin <= 50000):
+                case (loin > 50000 && loin <= 100000):
                     text3.innerText = "En vrai ça passe"
                     score = score + 500
                     SCORE.innerText = 'POINTS : ' + score + ' points'
@@ -245,11 +385,17 @@ guess.addEventListener('click', () => {
         }
     } else {
         text2.innerText = 'T mauvais Jack!'
+        score = score + 0
         text4.innerText = 'Tu es à ' + resultat + ' métres de ta destination!'
         text3.innerText = "Tu fais pitié frère."
-    };
+    }; 
+        
 
+        refresh.classList.remove("hidden")
+        refresh.innerText = "RECOMMENCER";
     
 
-     
+    
+});
+
 });
