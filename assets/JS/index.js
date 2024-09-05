@@ -315,9 +315,6 @@ start.addEventListener('click', () => {
     display.appendChild(imgDisp);
     guess.classList.remove("hidden");
     start.classList.add("hidden");
-    
-
-    
 
     guess.addEventListener('click', () => {
 
@@ -389,13 +386,7 @@ start.addEventListener('click', () => {
         text4.innerText = 'Tu es à ' + resultat + ' métres de ta destination!'
         text3.innerText = "Tu fais pitié frère."
     }; 
-        
-
         refresh.classList.remove("hidden")
         refresh.innerText = "RECOMMENCER";
-    
-
-    
 });
-
 });
