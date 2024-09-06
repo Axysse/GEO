@@ -258,11 +258,31 @@ let game = [
    
 ];
 
+function Toolate(){
+    alert("Trop tard looser!")
+    location.reload();
+}
+
+function Time(){
+    countDownDate = new Date().getTime() + 32000;
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        text4.innerText =  seconds + "s";
+        if (distance < 0) {
+            clearInterval(x);
+            alert("FINITO PIPO GROS RIGOLO")
+            text4.Text = "FINITO";
+            window.location.reload();
+          }
+        }, 1000);
+
+
+}
 
 function getRandomItem(arr) {
-
     return randomIndex = Math.floor(Math.random() * game.length);
-    
 }
 
 let result = getRandomItem(game);
@@ -316,7 +336,17 @@ start.addEventListener('click', () => {
     guess.classList.remove("hidden");
     start.classList.add("hidden");
 
+
+    Time();
+
     guess.addEventListener('click', () => {
+
+      
+
+        // setTimeout(() => {
+        //     Toolate
+        // }, 60000);
+
 
         i++
         console.log(i)
